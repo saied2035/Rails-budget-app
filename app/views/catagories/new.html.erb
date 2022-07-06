@@ -1,0 +1,15 @@
+ <%= render 'header_for_new'%>
+ <section class="flex flex-column items-center mt3" style="gap:1rem">
+<p class="f3 fw6">Add Category</p>
+<%=form_with(model: @catagory, url: catagories_url,html: {class: "flex flex-column items-center w-100"}) do |f| %>
+  <div class="field w-100 w-50-ns mb3">
+    <%= f.text_field :name, autofocus: true, class:'w-100', placeholder:'Category name'%>
+  </div>
+
+  <div class="field w-100 w-50-ns mb3">
+    <%= f.text_field :icon,class:'w-100', placeholder:'Icon URL'%>
+  </div>
+  <div>
+    <%= f.submit :Save, class:'submit-new-cat-trans tc pa4 pb2 pt2 fw6' %>
+  </div>  
+<% end %>

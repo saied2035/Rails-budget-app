@@ -1,4 +1,7 @@
-/* *= require tachyons */
+/* 
+*= require tachyons 
+*= require font-awesome
+*/
 @font-face {
     font-family: 'Gladista Script';
     font-style: normal;
@@ -38,8 +41,8 @@ a {
 button, input[type='submit'], input[type='checkbox'] {
     cursor: pointer;
 }
-.splash-section {
-   
+input {
+    outline: none;
 }
 #app-name {
     font-family: 'Gladista Script', sans-serif;
@@ -120,4 +123,27 @@ button, input[type='submit'], input[type='checkbox'] {
 .field_with_errors > input::placeholder {
     font-weight: 600;
     opacity: 0.7;
+}
+
+.sign-out {
+    border: none;
+    background: none;
+    color: #f1f3f2;
+}
+
+.new-category {
+    background: #5fb523;
+}
+
+.new-category > a > button {
+    border: none;
+    background: none;
+    color: white
+}
+
+.submit-new-cat-trans {
+    outline: none;
+    border: none;
+    background: #3778c2;
+    color:  #f1f3f2;
 }
