@@ -1,0 +1,21 @@
+<section class="vh-100 flex flex-column items-center">
+ <%= render 'show_header' %>
+  <p class="f3 green tc fw6"><%= notice %></p>
+  <p class="f3 red tc fw6"><%= alert %></p>
+ <main class="w-100 pb3 flex flex-column" style="gap:1rem;flex:1">
+    <p class="bg-white flex justify-between f4 pa3 fw6">
+        <span class="o-50">Total transactions amount</span>
+        <span><%="$#{@catagory.payments.sum(:amount)}"%></span>
+    </p>
+ <%if @payments.length.positive?%>  
+ <% @payments.each do |payment| %>
+     <%=render partial: 'payment', locals:{payment:payment} %>
+ <%end%>
+ <%end%>
+</main>
+ <div class='new-transaction pt3 pb3 w-100 flex justify-center'>
+    <%=link_to new_catagory_payment_path(@catagory), class:'w-90 tc pa3 ba b--white' do%>
+        <button class="f3 fw5">New transaction</button>
+    <%end%>
+ </div>	
+</section>

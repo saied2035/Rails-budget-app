@@ -23,6 +23,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_152711) do
     t.index ["author_id"], name: "index_catagories_on_author_id"
   end
 
+  create_table "catagories_payments", id: false, force: :cascade do |t|
+    t.bigint "catagory_id"
+    t.bigint "payment_id"
+    t.index ["catagory_id"], name: "index_catagories_payments_on_catagory_id"
+    t.index ["payment_id"], name: "index_catagories_payments_on_payment_id"
+  end
+
   create_table "payments", force: :cascade do |t|
     t.bigint "author_id"
     t.string "name"
@@ -30,13 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_152711) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_payments_on_author_id"
-  end
-
-  create_table "payments_catagories", id: false, force: :cascade do |t|
-    t.bigint "payment_id"
-    t.bigint "catagory_id"
-    t.index ["catagory_id"], name: "index_payments_catagories_on_catagory_id"
-    t.index ["payment_id"], name: "index_payments_catagories_on_payment_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_152711) do
   end
 
   add_foreign_key "catagories", "users", column: "author_id"
+  add_foreign_key "catagories_payments", "catagories"
+  add_foreign_key "catagories_payments", "payments"
   add_foreign_key "payments", "users", column: "author_id"
-  add_foreign_key "payments_catagories", "catagories"
-  add_foreign_key "payments_catagories", "payments"
 end
