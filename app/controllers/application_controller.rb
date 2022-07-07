@@ -1,15 +1,21 @@
 class ApplicationController < ActionController::Base
 	  protect_from_forgery prepend: true
     before_action :update_allowed_parameters, if: :devise_controller?
-    
+    rescue_from CanCan::AccessDenied do |exception|
+      respond_to do |format|
+        format.json { head :forbidden }
+        format.html { redirect_to root_path, alert: exception.message }
+      end
+    end
+
     protected
 
     def after_sign_up_path_for(_resource_or_scope)
-      catagories_url
+      root_url
     end
 
     def after_sign_in_path_for(_resource_or_scope)
-      catagories_url
+      root_url
     end
 
     def after_sign_out_path_for(_resource_or_scope)

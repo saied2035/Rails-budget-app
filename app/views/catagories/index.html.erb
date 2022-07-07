@@ -1,13 +1,17 @@
 <section class="vh-100 flex flex-column items-center">
- <%= render 'header' %>
- <main class="catagories-section w-100 pb3 flex flex-column" style="gap:1rem;flex:1">
+ <%= render 'index_header' %>
+  <p class="f3 green tc fw6"><%= notice %></p>
+  <p class="f3 red tc fw6"><%= alert %></p>
+ <main class="w-100 pb3 flex flex-column" style="gap:1rem;flex:1">
     <p class="bg-white flex justify-between f4 pa3 fw6">
-        <span class="o-50">Total amount</span>
-        <span><%="$#{@user.payments.sum(:amount)}"%></span>
+        <span class="o-50">Total categories amount</span>
+        <span><%="$#{@catagories.joins(:payments).sum(:amount)}"%></span>
     </p>
  <%if @catagories.length.positive?%>  
  <% @catagories.each do |catagory| %>
-     <%=render catagory %>
+    <%= link_to catagory_path(catagory) do %>
+      <%=render catagory %>
+    <%end%> 
  <%end%>
  <%end%>
 </main>

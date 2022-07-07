@@ -105,22 +105,22 @@ input {
     border: 0.5px solid #efeff1;
     border-radius: 4px;
 }
-.field > input {
+.field > input, .field > select {
    padding: 0.7rem;
    border: none;
 }
 
-.field > input::placeholder {
+.field > input::placeholder, .field > select > option {
     font-weight: 600;
     opacity: 0.7;
 }
 
-.field_with_errors > input {
+.field_with_errors > input, .field > select {
    padding: 0.7rem;
    border: none;
 }
 
-.field_with_errors > input::placeholder {
+.field_with_errors > input::placeholder, .field > select > option {
     font-weight: 600;
     opacity: 0.7;
 }
@@ -131,11 +131,11 @@ input {
     color: #f1f3f2;
 }
 
-.new-category {
+.new-category, .new-transaction {
     background: #5fb523;
 }
 
-.new-category > a > button {
+.new-category > a > button, .new-transaction > a > button {
     border: none;
     background: none;
     color: white

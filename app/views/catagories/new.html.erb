@@ -2,6 +2,16 @@
  <section class="flex flex-column items-center mt3" style="gap:1rem">
 <p class="f3 fw6">Add Category</p>
 <%=form_with(model: @catagory, url: catagories_url,html: {class: "flex flex-column items-center w-100"}) do |f| %>
+  <% if @catagory.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@catagory.errors.count, "error") %> prohibited this category from being saved:</h2>
+      <ul>
+        <% @catagory.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="field w-100 w-50-ns mb3">
     <%= f.text_field :name, autofocus: true, class:'w-100', placeholder:'Category name'%>
   </div>
