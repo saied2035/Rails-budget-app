@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Payment, type: :model do
-  user = User.new(name: 'Saied',email: 'saied@gmail.com', password: '123456')
+  user = User.new(name: 'Saied', email: 'saied@gmail.com', password: '123456')
   subject do
-    payment = Payment.new(author:user,name:'name',amount:'100')
+    Payment.new(author: user, name: 'name', amount: '100')
   end
   before { subject }
   it 'name is nil or blank' do

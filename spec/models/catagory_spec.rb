@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Catagory, type: :model do
- user = User.new(name: 'Saied',email: 'saied@gmail.com', password: '123456')
+  user = User.new(name: 'Saied', email: 'saied@gmail.com', password: '123456')
   subject do
-    catagory = Catagory.new(author:user,name:'name',icon:'icon')
+    Catagory.new(author: user, name: 'name', icon: 'icon')
   end
   before { subject }
   it 'name is nil or blank' do
