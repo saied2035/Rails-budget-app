@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-#  blog post
+#  Bundget app
 
-> RoR basic project to build a structure for displaying users, their posts, and their comments. 
+> RoR app that helps users to add their categories and transactions. 
  
 ## Run the project locally 
   `rails s`
@@ -45,11 +45,6 @@ then run:
 - GitHub: [@Saied2035](https://github.com/saied2035)
 - Twitter: [@SaiedGaffer](https://twitter.com/SaiedGaffer)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/saiedgaffer/)
-
-👤 **Salim Abdulai**
-- GitHub: [@RayhanTabase](https://github.com/RayhanTabase)
-- Twitter: [@RayhanTabase](https://twitter.com/@RayhanTabase)
-- LinkedIn: [Salim-Abdulai](https://linkedin.com/in/salim-abdulai-5430065b)
 
 ## 🤝 Contributing
 
