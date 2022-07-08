@@ -22,7 +22,7 @@
     <%= f.text_field :amount,class:'w-100', placeholder:'Amount'%>
   </div>
   <div>
-    <%= f.submit :Save, class:'submit-new-cat-trans tc pa4 pb2 pt2 fw6' %>
+    <%= f.submit :Save, class:'submit-new-cat-trans tc pa4 pb2 pt2 fw6', id:'submit-new' %>
   </div>  
 <% end %>
 
@@ -37,7 +37,7 @@ html: {class: "flex flex-column items-center w-100"}) do |f| %>
     :id, :name, {include_blank:true}, { class: "w-100" } %>
   </div>
   <div>
-    <%= f.submit :Save, class:'submit-new-cat-trans tc pa4 pb2 pt2 fw6' %>
+    <%= f.submit :Save, class:'submit-new-cat-trans tc pa4 pb2 pt2 fw6', id:'submit-existing' %>
   </div>  
 <% end %>
 </section>
