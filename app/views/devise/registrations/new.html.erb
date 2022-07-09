@@ -1,0 +1,19 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%=render partial:'header', locals:{f:f} %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+   
+  <div class="field w-100 w-50-ns mt3">
+    <%= f.text_field :name, autofocus: true,class:"w-100",placeholder:'Full name' %>
+  </div>
+   
+  <div class="field w-100 w-50-ns">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"w-100",placeholder:'Email' %>
+  </div>
+
+  <div class="field w-100 w-50-ns mb3">
+    <%= f.password_field :password, autocomplete: "new-password",class:"w-100",placeholder:'Password' %>
+  </div>
+
+<% end %>
+
+<%= render "devise/shared/links" %>

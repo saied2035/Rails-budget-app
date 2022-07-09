@@ -1,0 +1,16 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%=render partial:'header', locals:{f:f} %>
+  <p class="f3 green tc fw6"><%= notice %></p>
+  <p class="f3 red tc fw6"><%= alert %></p>
+  <div class="field w-100 w-50-ns mt3">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",
+     class:'w-100', placeholder:'Email'%>
+  </div>
+
+  <div class="field w-100 w-50-ns mb3">
+    <%= f.password_field :password, autocomplete: "current-password",
+     class:'w-100', placeholder:'Password'%>
+  </div>
+<%= render "devise/shared/links" %>
+<% end %>
+

@@ -1,0 +1,43 @@
+ <%= render 'header_for_new'%>
+ <section class="flex flex-column items-center mt3" style="gap:1rem">
+<%=form_with(model: @payment, url: catagory_payments_url(@catagory),html: {class: "flex flex-column items-center w-100"}) do |f| %>
+<p class="f3 fw6">Add transaction</p>
+  <% if @payment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+      <ul>
+        <% @payment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field w-100 w-50-ns mb3">
+    <%= f.text_field :name, autofocus: true, class:'w-100', placeholder:'Transaction name'%>
+  </div>
+
+  <div class="field w-100 w-50-ns mb3">
+    <%= f.text_field :amount,class:'w-100', placeholder:'Amount'%>
+  </div>
+  <div>
+    <%= f.submit :Save, class:'submit-new-cat-trans tc pa4 pb2 pt2 fw6', id:'submit-new' %>
+  </div>  
+<% end %>
+
+<hr class="w-80 w-30-ns ma3 pl0 pr0" style="height: 2px;background: #3778c2;">
+
+<%=form_with(model:@payment, url: catagory_payments_url(@catagory),
+html: {class: "flex flex-column items-center w-100"}) do |f| %>
+<p class="f3 fw6">Add existing transaction</p>
+  <div class="field w-100 w-50-ns mb3">
+    <%= f.collection_select 'id', 
+    current_user.payments.where.not(payments:@catagory.payments).order('created_at desc'), 
+    :id, :name, {include_blank:true}, { class: "w-100" } %>
+  </div>
+  <div>
+    <%= f.submit :Save, class:'submit-new-cat-trans tc pa4 pb2 pt2 fw6', id:'submit-existing' %>
+  </div>  
+<% end %>
+</section>

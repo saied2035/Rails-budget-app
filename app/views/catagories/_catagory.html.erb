@@ -1,0 +1,5 @@
+<section class="w-100 bg-white pa3 flex items-center" style="gap:1rem">
+	<img class="w-25 w-20-m w-10-ns" alt="category image" src="<%=catagory.icon%>">
+	<p class="f5" style="flex:1.5"><%=catagory.name%></p>
+	<p class="f5 fw6" style="flex:0"><%="$#{catagory.payments.sum(:amount)}"%></p>
+</section>	
