@@ -8,7 +8,7 @@
   `rails s`
 
 ## Live Demo
-[Live Demo](https://rocky-cove-84963.herokuapp.com/)
+[Live Demo](https://glacial-lake-16247.herokuapp.com/)
 
   
 ## Built With
