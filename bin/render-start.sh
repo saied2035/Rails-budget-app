@@ -4,7 +4,6 @@ set -o errexit
 
 export RUBY_VERSION=$(cat $RENDER_SRC_ROOT .ruby-version)
 export BUNDLE_GEMFILE=$RENDER_SRC_ROOT Gemfile
-set_ruby_env $(fetch_or_build "$RUBY_VERSION")
-gem install bundler
-gem update --system
-bundle install
+source /home/render/ruby-env.sh
+set_ruby_env "$RUBIES_ROOT/ruby-$RUBY_VERSION"
+bundle exec puma -C ./config/puma.rb
