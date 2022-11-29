@@ -2,7 +2,9 @@
 # exit on error
 set -o errexit
 
+echo "start path"
 echo $PATH
+echo "end path"
 export RUBY_VERSION=3.1.2 && 
 export BUNDLE_GEMFILE=$RENDER_SRC_ROOTGemfile &&
 set_ruby_env $(fetch_or_build "3.1.2") &&
