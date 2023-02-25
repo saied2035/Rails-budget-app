@@ -8,7 +8,7 @@
   `rails s`
 
 ## Live Demo
-[Live Demo](https://glacial-lake-16247.herokuapp.com/)
+[Live Demo](https://rails-budget-app-production.up.railway.app/)
 
   
 ## Built With
