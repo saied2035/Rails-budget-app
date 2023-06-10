@@ -15,7 +15,8 @@
 # gem "pg"
 #
 default: &default
-  adapter: postgresql
+  adapter: cockroachdb
+  url: <%= ENV['DATABASE_URL'] %>
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
