@@ -299,6 +299,7 @@ DEPENDENCIES
   font-awesome-rails (~> 4.7, >= 4.7.0.2)
   importmap-rails
   jbuilder
+  pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3)
   rails-controller-testing
