@@ -33,3 +33,4 @@
 /config/credentials/environment.key
 
 /config/credentials/production.key
+/config/local_env.yml
