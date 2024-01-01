@@ -8,7 +8,7 @@
   `rails s`
 
 ## Live Demo
-[Live Demo](https://rails-budget-app-production.up.railway.app/)
+[Live Demo](https://budget-app-ppyy.onrender.com/)
 
   
 ## Built With
